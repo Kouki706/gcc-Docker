@@ -1,8 +1,16 @@
-FROM alpine
+FROM ubuntu:20.10
 
-RUN apk update && \
-    apk add --no-cache \
-    gcc \
-    libc-dev \
-    openssh \
-    git
+ENV DEBIAN_FRONTEND=noninteractive
+
+# install general packages
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    build-essential \
+    gnuplot \
+    openssh-client \
+    git && \
+    # clean to reduce image size
+    apt-get clean -y && \
+    apt-get autoremove -y && \
+    apt-get autoclean -y && \
+    rm -rf /var/lib/apt/lists/*
