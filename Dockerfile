@@ -7,7 +7,6 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     build-essential \
     gnuplot \
-    openssh-client \
     git && \
     # clean to reduce image size
     apt-get clean -y && \
