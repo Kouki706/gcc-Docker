@@ -7,7 +7,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     python3.9 \
     python3-pip \
-    gcc-10
+    gcc-10 \
     libc6-dev \
     libc-dev \
     libgmp3-dev \
@@ -20,7 +20,7 @@ RUN apt-get update && \
 
 # Change symbolic links
 RUN ln -s /usr/bin/python3.9 /usr/bin/python && \
-    ln -s /usr/bin/pip3 /usr/bin/pip
+    ln -s /usr/bin/pip3 /usr/bin/pip && \
     ln -s /usr/bin/gcc-10 /usr/bin/gcc
 
 # Install scpy
