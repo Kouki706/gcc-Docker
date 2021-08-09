@@ -12,6 +12,12 @@ RUN apt-get update && \
     libc-dev \
     libgmp3-dev \
     make && \
+    # Install Fonts
+    echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections && \
+    apt-get install -y --no-install-recommends ttf-mscorefonts-installer \
+    fonts-ipafont fonts-ipaexfont \
+    fontconfig && \
+    fc-cache -fv && \
     # clean to reduce image size
     apt-get clean -y && \
     apt-get autoremove -y && \
