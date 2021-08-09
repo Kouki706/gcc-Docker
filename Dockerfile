@@ -18,11 +18,6 @@ RUN apt-get update && \
     apt-get autoclean -y && \
     rm -rf /var/lib/apt/lists/*
 
-# Change symbolic links
-RUN ln -s /usr/bin/python3.9 /usr/bin/python && \
-    ln -s /usr/bin/pip3 /usr/bin/pip && \
-    ln -s /usr/bin/gcc-10 /usr/bin/gcc
-
 # Install scpy
-RUN pip install --upgrade pip && \
-    pip install scipy matplotlib numpy pandas jupyter
+RUN python3.9 -m pip install --upgrade pip && \
+    python3.9 -m pip install scipy matplotlib numpy pandas jupyter
