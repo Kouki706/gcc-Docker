@@ -8,6 +8,7 @@ RUN apt-get update && \
     python3.9 \
     python3-pip \
     gcc-10 \
+    g++-10 \
     libc6-dev \
     libc-dev \
     libgmp3-dev \
