@@ -12,7 +12,9 @@ RUN apt-get update && \
     libc6-dev \
     libc-dev \
     libgmp3-dev \
-    make && \
+    make \
+    bash-completion \
+    gnuplot && \
     # Install Fonts
     echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections && \
     apt-get install -y --no-install-recommends ttf-mscorefonts-installer \
