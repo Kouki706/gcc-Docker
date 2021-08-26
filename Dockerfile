@@ -5,6 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # install general packages
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
+    git \
     python3.9 \
     python3-pip \
     gcc-10 \
