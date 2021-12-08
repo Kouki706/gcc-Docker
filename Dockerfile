@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -6,14 +6,12 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     git \
-    python3.9 \
-    python3-pip \
-    gcc-10 \
-    g++-10 \
-    libc6-dev \
-    libc-dev \
-    libgmp3-dev \
+    gcc \
+    g++ \
+    libgmp-dev \
     make \
+    python3 \
+    python3-pip \
     bash-completion \
     gnuplot && \
     # Install Fonts
@@ -29,5 +27,5 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Install scpy
-RUN python3.9 -m pip install --upgrade pip && \
-    python3.9 -m pip install scipy matplotlib numpy pandas jupyter
+RUN pip install --upgrade pip && \
+    pip install scipy matplotlib numpy pandas jupyter
