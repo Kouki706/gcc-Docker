@@ -9,6 +9,7 @@ RUN apt-get update && \
     gcc \
     g++ \
     libgmp-dev \
+    libmpfr-dev \
     make \
     python3 \
     python3-pip \
