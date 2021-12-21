@@ -1,18 +1,19 @@
-FROM ubuntu:20.04
+FROM debian:11.2-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
 
 # install general packages
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-    git \
-    gcc-10 \
-    g++-10 \
+RUN apt update && \
+    apt install -y --no-install-recommends \
+    gcc \
+    g++ \
     libc6-dev \
+    libgmp-dev \
+    libmpfr-dev \
     make \
     bash-completion && \
     # clean to reduce image size
-    apt-get clean -y && \
-    apt-get autoremove -y && \
-    apt-get autoclean -y && \
+    apt clean -y && \
+    apt autoremove -y && \
+    apt autoclean -y && \
     rm -rf /var/lib/apt/lists/*
